@@ -1,10 +1,14 @@
 import React from "react";
+import Header from "./Header";
 
 const Allbeers = () => {
   return (
-    <div className="container">
-      <h1>All Beers</h1>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <h1>All Beers</h1>
+      </div>
+    </>
   );
 };
 

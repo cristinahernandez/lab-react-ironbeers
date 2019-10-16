@@ -59,3 +59,10 @@ button a {
   color: #fcfaf1;
   text-decoration: none;
 }
+
+/***Header***/
+header {
+  background-color: #517381;
+  text-align: center;
+  padding: 12px 0;
+}

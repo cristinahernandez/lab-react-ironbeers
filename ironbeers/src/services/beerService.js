@@ -15,6 +15,9 @@ class BeerService {
   getRandomBeer(random) {
     return this.axios.get(random).then(response => response.data);
   }
+  postNewBeer(body) {
+    return this.axios.post("/new", body).then(({ data: beer }) => beer);
+  }
 }
 
 const beerService = new BeerService();

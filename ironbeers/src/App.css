@@ -183,3 +183,50 @@ header {
   margin-top: 1em;
   margin-bottom: 2em;
 }
+
+/***FORM***/
+.register-form label {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: #274e55;
+  font-weight: 500;
+}
+
+.register-form input,
+.register-form textarea {
+  min-height: 30px;
+  font-size: 1em;
+  color: #999999;
+  padding: 10px 12px;
+  margin-bottom: 1.5em;
+  font-family: "Source Sans Pro", sans-serif;
+  border: 0px;
+  width: 90%;
+}
+
+.register-form input {
+  background-color: #fcfaf1;
+}
+
+.register-form button {
+  width: 65%;
+  margin: 2em auto 2em auto;
+  background-color: #c76345;
+  border: 0px;
+  border-radius: 6px;
+  box-shadow: none;
+  font-size: 1.2em;
+  color: #f6f4ea;
+  font-weight: bold;
+  padding: 10px 12px;
+}
+
+.register-form button:hover {
+  background-color: #af573c;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}

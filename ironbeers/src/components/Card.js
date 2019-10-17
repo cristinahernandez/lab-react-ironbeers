@@ -5,7 +5,7 @@ const Card = props => {
   return (
     <div className="card">
       <div className="image-beer">
-        <Link to="/beers/:beerId">
+        <Link to={props.id}>
           <img src={props.image} alt={props.name} />
         </Link>
       </div>
@@ -17,7 +17,9 @@ const Card = props => {
           <br /> {props.contributted}
         </p>
         <button>
-          <Link to="/beers/:beerId">See details</Link>
+          <Link to={props.id} id={props.id}>
+            See details
+          </Link>
         </button>
       </div>
     </div>

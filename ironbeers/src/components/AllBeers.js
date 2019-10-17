@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "./Header";
-// import axios from "axios";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 import beerService from "../services/beerService";
@@ -57,6 +56,7 @@ class Allbeers extends Component {
                           name={beer.name}
                           tagline={beer.tagline}
                           contributted={beer.contributed_by}
+                          id={beer._id}
                         />
                       )
                   )}
@@ -75,6 +75,7 @@ class Allbeers extends Component {
                           name={beer.name}
                           tagline={beer.tagline}
                           contributted={beer.contributed_by}
+                          id={beer._id}
                         />
                       )
                   )}

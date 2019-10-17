@@ -9,6 +9,9 @@ class BeerService {
   getAllBeers() {
     return this.axios.get().then(response => response.data);
   }
+  getOneBeer(id) {
+    return this.axios.get(id).then(response => response.data);
+  }
 }
 
 const beerService = new BeerService();

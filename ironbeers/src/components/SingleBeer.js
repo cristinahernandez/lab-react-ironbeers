@@ -21,7 +21,6 @@ class SingleBeer extends Component {
     }
   }
   render() {
-    console.log(this.state.id);
     const { id } = this.state;
     return (
       <>

@@ -12,6 +12,9 @@ class BeerService {
   getOneBeer(id) {
     return this.axios.get(id).then(response => response.data);
   }
+  getRandomBeer(random) {
+    return this.axios.get(random).then(response => response.data);
+  }
 }
 
 const beerService = new BeerService();

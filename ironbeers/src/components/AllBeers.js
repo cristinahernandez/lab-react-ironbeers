@@ -23,16 +23,10 @@ class Allbeers extends Component {
       console.log(error);
     }
   }
-  // componentDidMount() {
-  //   axios.get("https://ih-beer-api.herokuapp.com/beers").then(response => {
-  //     this.setState({
-  //       beers: response.data
-  //     });
-  //   });
-  // }
   render() {
     const col1 = 15;
     const col2 = 30;
+    console.log(this.state.beers);
     return (
       <>
         <Header />
@@ -57,6 +51,8 @@ class Allbeers extends Component {
                           tagline={beer.tagline}
                           contributted={beer.contributed_by}
                           id={beer._id}
+                          beers={this.handleRandom}
+                          noButton={false}
                         />
                       )
                   )}

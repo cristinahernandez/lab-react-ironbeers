@@ -2,6 +2,7 @@ body {
   background-color: #fcfaf1;
   font-size: 16px;
   box-sizing: content-box;
+  font-family: "Volkhov", serif;
 }
 .App {
   width: 100%;
@@ -33,6 +34,24 @@ h2 {
 
 p {
   color: #555555;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h4 {
+  color: #3d5265;
+  margin: 16px 0 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.breadcrumbs {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.breadcrumbs a {
+  color: #555555;
+  text-decoration: none;
 }
 
 /***CARD***/
@@ -65,4 +84,86 @@ header {
   background-color: #517381;
   text-align: center;
   padding: 12px 0;
+}
+.card img {
+  max-height: 100px;
+  width: auto;
+  margin-top: 12px;
+}
+.card {
+  border-radius: 12px;
+  background-color: #fcfaf1;
+  margin-bottom: 1em;
+  min-height: 420px;
+}
+
+.image-beer {
+  background-color: #ffe4bb;
+  text-align: center;
+  padding: 1em;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.beer-info {
+  padding: 0 1em 1em 1em;
+}
+.credits {
+  font-size: 0.8em;
+}
+.tagline {
+  color: #517381;
+  margin: 0 0 1em 0;
+  line-height: 1.2em;
+}
+.card button {
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+/***Layout***/
+.row {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.column {
+  width: 50%;
+  flex-grow: 1;
+}
+.column + .column {
+  margin-left: 4.5%;
+}
+
+/***Loading***/
+.loading {
+  overflow: hidden;
+  border-right: 0.15em solid #fcfaf1;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffe4bb;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ffe4bb;
+  }
 }

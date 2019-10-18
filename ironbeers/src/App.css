@@ -74,6 +74,7 @@ button {
   font-family: "Volkhov", serif;
   font-size: 1em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 button a {
@@ -194,7 +195,8 @@ header {
 }
 
 .register-form input,
-.register-form textarea {
+.register-form textarea,
+input {
   min-height: 30px;
   font-size: 1em;
   color: #999999;
@@ -207,6 +209,9 @@ header {
 
 .register-form input {
   background-color: #fcfaf1;
+}
+input {
+  width: 94%;
 }
 
 .register-form button {

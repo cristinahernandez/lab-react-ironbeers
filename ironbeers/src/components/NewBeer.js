@@ -11,7 +11,7 @@ class Newbeer extends Component {
       tagline: "",
       description: "",
       first_brewed: "",
-      contributted: "",
+      contributed_by: "",
       brewers_tips: "",
       attenuation_level: 0,
       submitted: false
@@ -33,7 +33,6 @@ class Newbeer extends Component {
   }
   handleInput(event) {
     const { name, value } = event.target;
-    console.log(name, value);
     this.setState({
       [name]: value
     });
@@ -44,7 +43,7 @@ class Newbeer extends Component {
       tagline,
       description,
       firstBrewed,
-      contributted,
+      contributedBy,
       brewersTips,
       attenuation_level
     } = this.state;
@@ -91,7 +90,7 @@ class Newbeer extends Component {
               />
               <label>First Brewed</label>
               <input
-                type="date"
+                type="text"
                 onChange={this.handleInput}
                 value={firstBrewed}
               ></input>
@@ -116,10 +115,10 @@ class Newbeer extends Component {
               <label>Contributted by</label>
               <input
                 type="text"
-                name="contributted"
+                name="contributed_by"
                 onChange={this.handleInput}
                 placeholder="Author's name"
-                value={contributted}
+                value={contributedBy}
               />
               <button>Create your own beer!</button>
             </form>

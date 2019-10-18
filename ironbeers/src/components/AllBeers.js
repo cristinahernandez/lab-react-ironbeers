@@ -9,7 +9,8 @@ class Allbeers extends Component {
     super();
     this.state = {
       beers: [],
-      loading: true
+      loading: true,
+      query: ""
     };
   }
   async componentDidMount() {
@@ -23,10 +24,18 @@ class Allbeers extends Component {
       console.log(error);
     }
   }
+  handleSearch = event => {
+    const { value } = event.target;
+    this.setState({
+      query: value
+    });
+  };
   render() {
     const col1 = 15;
     const col2 = 30;
-    console.log(this.state.beers);
+    const beerFiltered = this.state.beers.filter(beer => {
+      return beer.name.toLowerCase().includes(this.state.query.toLowerCase());
+    });
     return (
       <>
         <Header />
@@ -34,47 +43,46 @@ class Allbeers extends Component {
           <p className="breadcrumbs">
             <Link to="/">&laquo; All Beers</Link>
           </p>
+          <input
+            type="text"
+            name="query"
+            value={this.state.query}
+            placeholder="Search a beer"
+            onChange={this.handleSearch}
+          />
           {this.state.loading && <div className="loading">loading...</div>}
           <div className="row">
             <div className="column">
               {!this.state.loading &&
-                this.state.beers
+                beerFiltered
                   .slice(0, col1)
-                  .map(
-                    beer =>
-                      beer.image_url !==
-                        "https://images.punkapi.com/v2/keg.png" && (
-                        <Card
-                          key={beer._id}
-                          image={beer.image_url}
-                          name={beer.name}
-                          tagline={beer.tagline}
-                          contributted={beer.contributed_by}
-                          id={beer._id}
-                          beers={this.handleRandom}
-                          noButton={false}
-                        />
-                      )
-                  )}
+                  .map(beer => (
+                    <Card
+                      key={beer._id}
+                      image={beer.image_url}
+                      name={beer.name}
+                      tagline={beer.tagline}
+                      contributted={beer.contributed_by}
+                      id={beer._id}
+                      beers={this.handleRandom}
+                      noButton={false}
+                    />
+                  ))}
             </div>
             <div className="column">
               {!this.state.loading &&
-                this.state.beers
+                beerFiltered
                   .slice(col1 + 1, col2)
-                  .map(
-                    beer =>
-                      beer.image_url !==
-                        "https://images.punkapi.com/v2/keg.png" && (
-                        <Card
-                          key={beer._id}
-                          image={beer.image_url}
-                          name={beer.name}
-                          tagline={beer.tagline}
-                          contributted={beer.contributed_by}
-                          id={beer._id}
-                        />
-                      )
-                  )}
+                  .map(beer => (
+                    <Card
+                      key={beer._id}
+                      image={beer.image_url}
+                      name={beer.name}
+                      tagline={beer.tagline}
+                      contributted={beer.contributed_by}
+                      id={beer._id}
+                    />
+                  ))}
             </div>
           </div>
         </div>
